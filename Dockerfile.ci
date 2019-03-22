@@ -3,5 +3,7 @@ FROM ${release_image}
 
 RUN rm BUILD || echo "No BUILD file present"
 
+ENV CI=true
+
 ENTRYPOINT ["/bin/bash", "-lc"]
 CMD ["npm test"]
