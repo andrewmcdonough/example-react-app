@@ -1,0 +1,7 @@
+ARG release_image
+FROM ${release_image}
+
+RUN rm BUILD || echo "No BUILD file present"
+
+ENTRYPOINT ["/bin/bash", "-lc"]
+CMD ["npm test"]
